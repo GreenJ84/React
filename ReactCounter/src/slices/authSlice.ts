@@ -2,12 +2,14 @@ import { createSlice } from "@reduxjs/toolkit";
 
 interface authType {
     isAuthenticated: boolean
+    loginForm: boolean
 }
 
 export const authSlice = createSlice({
     name: 'authentication',
     initialState: {
-        isAuthenticated: false
+        isAuthenticated: false,
+        loginForm: false
     } as authType,
     reducers: {
         login(state) {
@@ -16,6 +18,13 @@ export const authSlice = createSlice({
         logout(state) {
             state.isAuthenticated = false
         },
+        toggleForm(state) {
+            if (state.loginForm === false){
+                state.loginForm = true
+            } else {
+                state.loginForm = false
+            }
+        }
     }
 })
 
