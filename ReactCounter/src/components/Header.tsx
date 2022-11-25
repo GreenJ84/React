@@ -13,7 +13,7 @@ const Header = () => {
             <a href='/'>My Sales</a>
           </li>
           <li>
-            <button>Logout</button>
+            <button>Login</button>
           </li>
         </ul>
       </nav>
