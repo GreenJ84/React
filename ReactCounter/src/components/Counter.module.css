@@ -12,7 +12,7 @@ h1 {
   text-transform: uppercase;
   color: #575757;
   margin: 0;
-  font-size: 1rem;
+  font-size: 2rem;
 }
 
 button {
@@ -20,7 +20,7 @@ button {
 }
 
 h1+div {
-  font-size: 2rem;
+  font-size: 3rem;
   color: #3c0080;
   margin: 2rem 0;
   font-weight: bold;
