@@ -18,10 +18,11 @@ button {
   padding: 0.5rem 1.5rem;
   border-radius: 6px;
   height: 50px;
+  box-shadow: 4px 4px 2px black;
 }
 
-button:hover,
-button:active {
-  background-color: #5b14ac;
-  border-color: #5b14ac;
+button:hover, button:active {
+  background-color: #7905fd;
+  border-color: #7703fc;
+  box-shadow: 8px 8px 12px 6px black;
 }
