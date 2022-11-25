@@ -4,11 +4,11 @@ import Header from "./components/Header";
 import Auth from './components/Auth'
 import UserProfile from './components/UserProfile';
 import { useSelector } from 'react-redux';
-import { authType } from './slices/authSlice';
+import { storeType } from './app/store';
 
 
 const App = () => {
-  const loggedIn = useSelector((state: authType) => state.isAuthenticated);
+  const loggedIn = useSelector((state: storeType) => state.auth.isAuthenticated);
 
 
   return (<>
