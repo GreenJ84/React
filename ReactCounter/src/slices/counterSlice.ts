@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit'
 
-interface counterType{
+export interface counterType{
     value: number
 }
 
