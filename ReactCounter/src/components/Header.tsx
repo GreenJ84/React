@@ -1,14 +1,10 @@
 import './Header.module.css';
 import { useSelector, useDispatch } from 'react-redux';
 import { logout, toggleForm } from '../slices/authSlice'
-
-interface authType {
-  isAuthenticated: boolean
-  needsLogin: boolean
-}
+import { storeType } from '../app/store';
 
 const Header = () => {
-  const loggedIn = useSelector((state: authType) => state.isAuthenticated);
+  const loggedIn = useSelector((state: storeType) => state.auth.isAuthenticated);
 
   const dispatch = useDispatch();
 
