@@ -9,13 +9,11 @@ import { authType } from './slices/authSlice';
 
 const App = () => {
   const loggedIn = useSelector((state: authType) => state.isAuthenticated);
-  const displayForm = useSelector((state: authType) => state.loginForm);
 
 
   return (<>
     <Header />
-    {loggedIn ? <UserProfile /> : 
-    displayForm? <Auth /> : ''}
+    {loggedIn ? <UserProfile /> : <Auth/>}
     <Counter />
     </>
   );
