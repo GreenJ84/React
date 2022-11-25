@@ -1,16 +1,11 @@
 import { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import "./Counter.module.css";
-import { decrement, increment, incrementByAmount } from '../slices/counterSlice'
-
-
-interface counterType{
-  counter: { value: number}
-}
+import { decrement, increment, incrementByAmount, counterType } from '../slices/counterSlice'
 
 const Counter = () => {
   const [toggle, setToggle] = useState(false)
-  const counter = useSelector((state: counterType)  => state.counter.value);
+  const counter = useSelector((state: counterType)  => state.value);
   const dispatch = useDispatch();
 
   const toggleCounterHandler = () => {
