@@ -10,11 +10,12 @@ const Auth = () => {
 
   const loginHandler = (e: React.FormEvent<HTMLFormElement> ) => {
     e.preventDefault()
+    console.log('loggingIn')
     dispatch(login());
   };
 
   return (
-    <main style={{display: 'block'}}>
+    <main style={{display: displayForm ? 'block' : 'none'}}>
       <section>
         <form onSubmit={loginHandler}>
           <div>
