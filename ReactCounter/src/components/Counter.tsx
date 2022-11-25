@@ -1,22 +1,36 @@
+import { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import "./Counter.module.css";
-import { decrement, increment } from '../slices/counterSlice'
+import { decrement, increment, incrementByAmount } from '../slices/counterSlice'
+
 
 interface counterType{
   counter: { value: number}
 }
 
 const Counter = () => {
+  const [toggle, setToggle] = useState(false)
   const counter = useSelector((state: counterType)  => state.counter.value);
   const dispatch = useDispatch();
 
-  const toggleCounterHandler = () => {};
-
-  const incrementCounterHandler = () => {
-    dispatch(increment());
+  const toggleCounterHandler = () => {
+    if(toggle){
+      setToggle(false)
+    } else{
+      setToggle(true)
+    }
   };
 
-  const decrementCounterHandler = () => {
+  const incrementHandler = () => {
+    dispatch(increment());
+  };
+  
+  const randomChangeHandler = () => {
+    let x = Math.ceil(Math.random()*10)
+    dispatch(incrementByAmount(x));
+  };
+
+  const decrementHandler = () => {
     dispatch(decrement())
   };
 
@@ -26,11 +40,14 @@ const Counter = () => {
         <div className='value'>
           { counter }
         </div>
-        <div>
-          <button onClick={incrementCounterHandler}>
+        <div style={{display:toggle ? 'block':'none'}}>
+          <button onClick={incrementHandler}>
             Increment
           </button>
-          <button onClick={decrementCounterHandler}>
+          <button onClick={randomChangeHandler}>
+            Random Change
+          </button>
+          <button onClick={decrementHandler}>
             Decrement
           </button>
         </div>
