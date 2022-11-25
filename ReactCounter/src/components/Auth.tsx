@@ -1,18 +1,22 @@
 import './Auth.module.css';
-import { useSelector, useDispatch } from 'react-redux'
-import { authType, login } from '../slices/authSlice';
+import { useDispatch } from 'react-redux'
+import { login } from '../slices/authSlice';
+import { useSelector } from 'react-redux';
+import { storeType } from '../app/store';
 
 const Auth = () => {
+  const displayForm = useSelector((state: storeType) => state.auth.loginForm);
   const dispatch = useDispatch()
 
-  const loginHandler = () => {
+  const loginHandler = (e: React.FormEvent<HTMLFormElement> ) => {
+    e.preventDefault()
     dispatch(login());
-  }
+  };
 
   return (
-    <main>
+    <main style={{display: 'block'}}>
       <section>
-        <form>
+        <form onSubmit={loginHandler}>
           <div>
             <label htmlFor='email'>Email</label>
             <input type='email' id='email' />
@@ -21,7 +25,7 @@ const Auth = () => {
             <label htmlFor='password'>Password</label>
             <input type='password' id='password' />
           </div>
-          <button onClick={ loginHandler }>Login</button>
+          <button>Login</button>
         </form>
       </section>
     </main>
