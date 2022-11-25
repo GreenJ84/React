@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-interface authType {
+export interface authType {
     isAuthenticated: boolean
     loginForm: boolean
 }
