@@ -14,7 +14,7 @@ const NavBar = () => {
                     </NavLink>
                     </li>
                     <li>
-                    <NavLink to='/new-quote' className={navData => navData.isActive ? 'active' : '' }>
+                    <NavLink to='/newQuote' className={navData => navData.isActive ? 'active' : '' }>
                         Add a Quote
                     </NavLink>
                     </li>
