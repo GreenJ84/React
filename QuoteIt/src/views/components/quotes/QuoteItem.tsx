@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
+import './QuoteItem.module.css'
 
 interface quoteItemProps {
     id: number,
@@ -9,7 +10,7 @@ interface quoteItemProps {
 
 const QuoteItem = (props: quoteItemProps) => {
     return (
-        <li>
+        <li className='item'>
             <figure>
                 <blockquote>
                 <p>{props.text}</p>
