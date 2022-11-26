@@ -1,8 +1,9 @@
 import Link from 'next/link';
-import React from 'react'
+import React from 'react';
+const css = require('./NavBar.module.css')
 
 const NavBar = () => {
-    
+
     return (
         <header>
             <div>React Meetups</div>
