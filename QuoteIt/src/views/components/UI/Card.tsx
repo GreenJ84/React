@@ -15,9 +15,9 @@ const Card = (props: cardProps) => {
 const StyledCard = styled.div`
     padding: 1rem;
     margin: 1rem;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: 4px 4px 8px black;
     border-radius: 6px;
-    background-color: white;
+    background-color: #ADC4BF;
 `
 
 export default Card;
