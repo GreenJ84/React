@@ -1,9 +1,26 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 
-const QuoteItem = () => {
+interface quoteItemProps {
+    id: number,
+    author: string,
+    text: string
+}
+
+const QuoteItem = (props: quoteItemProps) => {
     return (
-        <div>QuoteItem</div>
-    )
+        <li>
+            <figure>
+                <blockquote>
+                <p>{props.text}</p>
+                </blockquote>
+                <figcaption>{props.author}</figcaption>
+            </figure>
+            <Link className='btn' to={`/quotes/${props.id}`}>
+                View Fullscreen
+            </Link>
+        </li>
+    );
 }
 
 export default QuoteItem
