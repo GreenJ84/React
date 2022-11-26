@@ -1,5 +1,5 @@
 import React from 'react'
-import { StringLiteral } from 'typescript'
+import './HighlightedQuotes.module.css'
 
 interface highlightProps{
     author: string
