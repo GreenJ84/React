@@ -1,4 +1,5 @@
 import MeetupItem, { meetupItemProps } from './MeetupItem';
+const css = require('./MeetupList.module.css')
 
 interface meetupListProps {
     meetups: meetupItemProps[]
@@ -6,7 +7,7 @@ interface meetupListProps {
 
 function MeetupList(props: meetupListProps) {
     return (
-        <ul>
+        <ul className={ css.list }>
             {props.meetups.map((meetup) => (
                 <MeetupItem
                 key={meetup.id}
