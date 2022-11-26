@@ -1,13 +1,15 @@
 import React from 'react'
 import { meetupItemProps } from './MeetupItem';
 
+const css = require('./MeetupDetail.module.css')
+
 interface meetupDetailProps extends meetupItemProps {
     description: string
 }
 
 const MeetupDetail = (props: meetupDetailProps) => {
     return (
-        <section >
+        <section className={ css.detail }>
             <img
                 src={props.image}
                 alt={props.title}
