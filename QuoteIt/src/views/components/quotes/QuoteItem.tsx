@@ -13,9 +13,11 @@ const QuoteItem = (props: quoteItemProps) => {
         <li className='item'>
             <figure>
                 <blockquote>
-                <p>{props.text}</p>
+                    <p>{props.text}</p>
                 </blockquote>
-                <figcaption>{props.author}</figcaption>
+                <figcaption>
+                    - {props.author}
+                </figcaption>
             </figure>
             <Link className='btn' to={`/quotes/${props.id}`}>
                 View Fullscreen
@@ -24,4 +26,4 @@ const QuoteItem = (props: quoteItemProps) => {
     );
 }
 
-export default QuoteItem
+export default QuoteItem;
