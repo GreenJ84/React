@@ -1,4 +1,6 @@
 import React, { ReactElement } from 'react'
+import NavBar from './NavBar';
+import './Layout.module.css'
 
 interface layoutProps{
     children: ReactElement
@@ -7,7 +9,7 @@ interface layoutProps{
 const Layout = (props: layoutProps) => {
     return (
         <>
-            {/* Nav Bar <MainNavigation /> */}
+            <NavBar/>
             <main >
                 {props.children}
             </main>
