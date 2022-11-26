@@ -1,7 +1,14 @@
 import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit';
 
+import quoteSlice, { quoteType } from './slices/quoteSlice'
+
+export interface storeType {
+  quotes: Array<quoteType>
+}
+
 export const store = configureStore({
   reducer: {
+    quotes: quoteSlice
   },
 });
 
