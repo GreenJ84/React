@@ -1,7 +1,7 @@
 import React, { useRef } from 'react'
 import Card from '../ui/Card'
 
-const css = require('./NewMeetupForm.modules.css')
+const css = require('./NewMeetupForm.module.css')
 
 interface meetupFormProps {
     onAddMeetup: Function
