@@ -5,10 +5,12 @@ import './NoQuotesFound.module.css';
 const NoQuotesFound = () => {
     return (
         <div>
-            <p>No quotes found!</p>
-            <Link className='btn' to='/newQuote'>
-                Add a Quote
-            </Link>
+            <div>
+                <p>No quotes found!</p>
+                <Link className='btn' to='/newQuote'>
+                    Add a Quote
+                </Link>
+            </div>
         </div>
     );
 };
