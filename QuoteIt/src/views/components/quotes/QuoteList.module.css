@@ -1,0 +1,28 @@
+div+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+li>div {
+    padding-bottom: 1rem;
+    border-bottom: 3px solid #b2d4d4;
+    margin-bottom: 2rem;
+}
+
+li>div button {
+    font: inherit;
+    color: teal;
+    border: 1px solid teal;
+    background-color: #80EAFF;
+    border-radius: 4px;
+    padding: 0.5rem 1.5rem;
+    cursor: pointer;
+    box-shadow: 4px 4px 3px 1px black
+
+}
+
+li>div button:hover {
+    background-color: #04f7f7;
+    box-shadow: 6px 6px 5px 2px black
+}

@@ -30,7 +30,7 @@ const QuoteList = () => {
     };
     
     return (
-        <>
+        <li>
             <div>
                 <button onClick={changeSortingHandler}>
                     Sort {sortAsc ? 'Descending' : 'Ascending'}
@@ -45,7 +45,7 @@ const QuoteList = () => {
                     text={quote.text}/>
                 ))}
             </ul>
-        </>
+        </li>
     )
 }
 
