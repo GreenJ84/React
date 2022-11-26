@@ -11,7 +11,8 @@ const quoteSlice = createSlice({
     initialState: [] as Array<quoteType>,
     reducers: {
         newQuote: (state, action) => {
-            state = [...state, action.payload]
+            console.log(action.payload)
+            state.push(action.payload)
         },
         removeQuote: (state, action) => {
             state.filter(item => item.id !== action.payload )
