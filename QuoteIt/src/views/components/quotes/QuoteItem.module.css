@@ -13,11 +13,13 @@ figure>blockquote {
 }
 
 blockquote>p {
-    margin: 0;
-    margin-bottom: 0.25rem;
+    margin: 1rem;
+    font-size: 2rem;
 }
 
 blockquote+figcaption {
     font-style: italic;
     color: #566d6d;
+    font-size: 1.5rem;
+    margin: 2rem 0 0 3rem;
 }
