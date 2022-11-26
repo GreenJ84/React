@@ -2,7 +2,7 @@ import { ReactElement } from 'react';
 import styled from 'styled-components'
 
 interface cardProps{
-    children: ReactElement
+    children: ReactElement[]
 }
 
 const Card = (props: cardProps) => {
