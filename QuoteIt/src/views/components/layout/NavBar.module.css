@@ -3,24 +3,26 @@ header {
     padding: 2rem;
     justify-content: space-between;
     align-items: center;
-    background-color: green;
+    background-color: rgb(3, 144, 135);
+    box-shadow: 0 4px 5px 0 black;
 }
 
 header>div {
-    font-size: 5rem;
+    font-size: 4.5rem;
     color: black;
+    margin-left: 1.5rem;
 }
 
 nav ul {
     list-style: none;
     display: flex;
-    margin: 0;
+    margin: 25px 0 0;
     padding: 0;
 }
 
 nav li {
-    margin-left: 1.5rem;
-    font-size: 1.25rem;
+    margin-left: 2rem;
+    font-size: 1.5rem;
 }
 
 nav a {

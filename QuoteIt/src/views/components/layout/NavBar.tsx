@@ -5,7 +5,7 @@ import './NavBar.module.css'
 const NavBar = () => {
     return (
         <header>
-            <div>Great Quotes</div>
+            <div> Hall of Quote Excellence </div>
             <nav>
                 <ul>
                     <li>
