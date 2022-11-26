@@ -3,7 +3,7 @@ import { useRouter } from 'next/router';
 import Card from '../ui/Card';
 const css = require('./MeetupItem.module.css')
 
-interface meetupItemProps {
+export interface meetupItemProps {
     id: number
     image: string
     title: string
