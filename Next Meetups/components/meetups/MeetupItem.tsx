@@ -1,6 +1,7 @@
 import { useRouter } from 'next/router';
 
 import Card from '../ui/Card';
+const css = require('./MeetupItem.module.css')
 
 interface meetupItemProps {
     id: number
@@ -17,12 +18,12 @@ const MeetupItem = (props: meetupItemProps) => {
     }
 
     return (
-        <li >
+        <li className={css.item}>
             <Card>
-                <div >
+                <div className={css.image}>
                     <img src={props.image} alt={props.title} />
                 </div>
-                <div >
+                <div className={css.content}>
                     <h3>
                         {props.title}
                     </h3>
@@ -30,10 +31,8 @@ const MeetupItem = (props: meetupItemProps) => {
                         {props.address}
                     </address>
                 </div>
-                <div >
-                    <button onClick={showDetailsHandler}>
-                        Show Details
-                    </button>
+                <div className={css.actions}>
+                    <button onClick={showDetailsHandler}>Show Details</button>
                 </div>
             </Card>
         </li>
