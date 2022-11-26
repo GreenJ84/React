@@ -1,9 +1,12 @@
 import React from 'react'
+import MeetupList from '../components/meetups/MeetupList'
 
 const HomePage = () => {
     return (
-        <div>HomePage</div>
+        <>
+            <MeetupList meetups={[]} />
+        </>
     )
 }
 
-export default HomePage
+export default HomePage;
