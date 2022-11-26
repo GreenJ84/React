@@ -1,15 +1,21 @@
 import React from "react";
-import { Route } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
+
+import AllQuotes from './views/pages/AllQuotes'
+import NewQuote from './views/pages/NewQuote'
+import QuoteDetail from './views/pages/QuoteDetail'
+import NotFound from './views/pages/NotFound'
 
 function App() {
   return (
-    <>
-    <Route />{/* All Quotes Home - <AllQuotes /> */} 
-    <Route />{/* Quote Detail - <QuoteDetail /> */}
-    <Route />{/* New Quote - <NewQuote /> */}
-    <Route />{/* Not Found - <NotFound /> */}
-    <h1>New React-Redux</h1>
-    </>
+
+    <Routes >
+      <Route path='/quotes' element={<AllQuotes />}/>
+      <Route path='/quotes/:quoteId' element={<QuoteDetail />}/>
+      <Route path='/newQuote' element={<NewQuote />}/>
+      <Route path='*' element={<NotFound />}/>
+    </Routes>
+
   );
 }
 
