@@ -1,12 +1,12 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useSelector } from 'react-redux';
-import { useLocation, useNavigate } from 'react-router-dom';
 import { quoteType } from '../../../app/slices/quoteSlice';
 import { storeType } from '../../../app/store';
 import QuoteItem from './QuoteItem';
+import './QuoteList.module.css'
 
 const sortQuotes = (quotes: Array<quoteType>, ascending: boolean) => {
-    return quotes.sort((quoteA, quoteB) => {
+    return quotes.slice().sort((quoteA, quoteB) => {
         if (ascending) {
             return quoteA.id > quoteB.id ? 1 : -1;
         } else {
@@ -16,27 +16,24 @@ const sortQuotes = (quotes: Array<quoteType>, ascending: boolean) => {
 };
 
 const QuoteList = () => {
+    const [sortAsc, setSortAsc] = useState(false)
     const quotes = useSelector((state: storeType) => state.quotes)
 
-    const navigate = useNavigate();
-    const location = useLocation();
-    const queryParams = new URLSearchParams(location.search);
-
-    const isSortingAscending = queryParams.get('sort') === 'asc';
-
-    const sortedQuotes = sortQuotes(quotes, isSortingAscending);
+    const sortedQuotes = sortQuotes(quotes, sortAsc);
 
     const changeSortingHandler = () => {
-        navigate(location.pathname, { state: {
-        search: `?sort=${isSortingAscending ? 'desc' : 'asc'}`,
-        }});
+        if (sortAsc) {
+            setSortAsc(false)
+        } else {
+            setSortAsc(true)
+        }
     };
     
     return (
         <>
             <div>
                 <button onClick={changeSortingHandler}>
-                    Sort {isSortingAscending ? 'Descending' : 'Ascending'}
+                    Sort {sortAsc ? 'Descending' : 'Ascending'}
                 </button>
             </div>
             <ul>
