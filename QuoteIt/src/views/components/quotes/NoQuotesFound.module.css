@@ -1,0 +1,17 @@
+div {
+    background-color: aquamarine;
+    height: 20rem;
+    margin: 4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+div>p {
+    color: #262c2c;
+    font-size: 3rem;
+    font-weight: bold;
+}
