@@ -1,6 +1,8 @@
 import React, { useRef } from 'react'
 import Card from '../ui/Card'
 
+const css = require('./NewMeetupForm.modules.css')
+
 interface meetupFormProps {
     onAddMeetup: Function
 }
@@ -30,26 +32,26 @@ const NewMeetupForm = (props: meetupFormProps) => {
         }
     return (
         <Card>
-            <form onSubmit={submitHandler}>
-                <div>
+            <form onSubmit={submitHandler} className='form'>
+                <div className='input'>
                     <label htmlFor='title'>
                         Meetup Title
                     </label>
                     <input type='text' required id='title' ref={titleInputRef} />
                 </div>
-                <div>
+                <div className='input'>
                     <label htmlFor='image'>
                         Meetup Image
                     </label>
                     <input type='url' required id='image' ref={imageInputRef} />
                 </div>
-                <div>
+                <div className='input'>
                     <label htmlFor='address'>
                             Address
                     </label>
                     <input type='text' required id='address' ref={addressInputRef} />
                 </div>
-                <div>
+                <div className='input'>
                     <label htmlFor='description'>
                         Description
                     </label>
@@ -57,7 +59,7 @@ const NewMeetupForm = (props: meetupFormProps) => {
                         >
                     </textarea>
                 </div>
-                <div>
+                <div className='submit'>
                     <button>
                         Add Meetup
                     </button>
