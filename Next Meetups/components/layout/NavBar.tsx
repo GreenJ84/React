@@ -5,7 +5,7 @@ const css = require('./NavBar.module.css')
 const NavBar = () => {
 
     return (
-        <header>
+        <header className={ css.header }>
             <div>React Meetups</div>
             <nav>
                 <ul>

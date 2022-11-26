@@ -1,20 +1,23 @@
-header {
+
+
+.header {
     width: 100%;
-    height: 5rem;
+    height: 8rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: #77002e;
+    background-color: #d30352;
     padding: 0 10%;
 }
 
-header>div {
-    font-size: 2rem;
-    color: white;
+.header>div {
+    font-size: 3.5rem;
+    color: rgba(66, 218, 249, 0.721);
     font-weight: bold;
+    text-shadow: 2px 2px 1px white, 6px 6px 2px black;
 }
 
-header nav>ul {
+.header ul {
     list-style: none;
     margin: 0;
     padding: 0;
@@ -22,18 +25,19 @@ header nav>ul {
     align-items: baseline;
 }
 
-header nav>li {
+.header li {
     margin-left: 3rem;
 }
 
-header nav>a {
+.header a {
     text-decoration: none;
     font-size: 1.5rem;
-    color: #fcb8d2;
+    color: rgba(107, 225, 249, 0.482);
 }
 
-header nav>a:hover,
-header nav>a:active,
-header nav>a.active {
-    color: white;
+.header a:hover,
+.header a:active,
+.header a.active {
+    color: rgb(107, 225, 249);
+    text-shadow: 2px 2px 3px black;
 }
