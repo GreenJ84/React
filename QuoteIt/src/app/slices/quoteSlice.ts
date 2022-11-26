@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-interface quoteType {
+export interface quoteType {
     id: number
     author: string
     text: string
@@ -18,3 +18,6 @@ const quoteSlice = createSlice({
         },
     }
 })
+
+export const { newQuote, removeQuote } = quoteSlice.actions;
+export default quoteSlice.reducer;
