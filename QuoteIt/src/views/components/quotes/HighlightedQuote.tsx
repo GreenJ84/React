@@ -1,5 +1,6 @@
 import React from 'react'
 import './HighlightedQuotes.module.css'
+import styled from 'styled-components'
 
 interface highlightProps{
     author: string
@@ -8,15 +9,25 @@ interface highlightProps{
 
 const HighlightedQuote = (props: highlightProps) => {
     return (
-        <figure>
+        <Fig>
             <p>
                 {props.text}
             </p>
             <figcaption>
-                {props.author}
+                - {props.author}
             </figcaption>
-        </figure>
+        </Fig>
     )
 }
+
+const Fig = styled.figure`
+    background-color: #162b2b;
+    color: white;
+    border-radius: 20px;
+    padding: 5rem;
+    margin: 3rem auto;
+    width: 100%;
+    max-width: 40rem;
+`;
 
 export default HighlightedQuote
