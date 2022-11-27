@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import MeetupList from '../components/meetups/MeetupList'
 import { meetupDetailProps } from '../components/meetups/MeetupDetail'
+import { GetServerSideProps, GetServerSidePropsContext, GetStaticProps, GetStaticPropsContext, PreviewData } from 'next'
+import { ParsedUrlQuery } from 'querystring'
 
 const DUMMY_DATA = [
     {
@@ -47,12 +49,20 @@ const HomePage = (props: homeProps) => {
     )
 }
 
-export async function getStaticProps() {
+// Data fetching methods 
+    // Can take in context (req, res)
+
+// 
+export const getStaticProps: GetStaticProps = (context) => {
     return {
         props: {
             meetups: DUMMY_DATA
-        }
+        },
+        // How many seconds to refresh when server calls ARE coming in
+        revalidate: 10
     }
 }
+
+
 
 export default HomePage;
