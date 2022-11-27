@@ -4,7 +4,7 @@ import { meetupDetailProps } from '../components/meetups/MeetupDetail'
 import { GetServerSideProps, GetServerSidePropsContext, GetStaticProps, GetStaticPropsContext, PreviewData } from 'next'
 import { ParsedUrlQuery } from 'querystring'
 
-const DUMMY_DATA = [
+export const DUMMY_DATA = [
     {
         id: 1,
         image: '',
@@ -40,8 +40,6 @@ interface homeProps{
 }
 
 const HomePage = (props: homeProps) => {
-    
-
     return (
         <>
             <MeetupList meetups={ props.meetups } />
@@ -49,10 +47,6 @@ const HomePage = (props: homeProps) => {
     )
 }
 
-// Data fetching methods 
-    // Can take in context (req, res)
-
-// 
 export const getStaticProps: GetStaticProps = (context) => {
     return {
         props: {
