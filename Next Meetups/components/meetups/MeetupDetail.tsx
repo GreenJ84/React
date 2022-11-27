@@ -3,7 +3,7 @@ import { meetupItemProps } from './MeetupItem';
 
 const css = require('./MeetupDetail.module.css')
 
-interface meetupDetailProps extends meetupItemProps {
+export interface meetupDetailProps extends meetupItemProps {
     description: string
 }
 
