@@ -1,5 +1,8 @@
 .item {
-    margin: 1rem 0;
+    margin: 2rem auto;
+    width: 80%;
+    box-shadow: 3px 3px 2px 1px rgba(67, 67, 67, 0.699);
+    border-radius: 10px;
 }
 
 .image {
@@ -21,8 +24,8 @@
 }
 
 .content h3 {
-    font-size: 1.25rem;
-    color: #2c292b;
+    font-size: 1.5rem;
+    color: #6f1116;
 }
 
 .actions {
@@ -33,9 +36,10 @@
 .actions button {
     font: inherit;
     cursor: pointer;
+    width: 40%;
     color: #77002e;
     border: 1px solid #77002e;
-    background-color: transparent;
+    background-color: rgb(253, 166, 195);
     padding: 0.5rem 1.5rem;
     border-radius: 4px;
 }
@@ -43,4 +47,5 @@
 .actions button:hover,
 .actions button:active {
     background-color: #ffe2ed;
+    box-shadow: inset 2px 2px 1px 1px rgb(82, 82, 82), inset -2px -2px 1px 1px rgb(82, 82, 82);
 }
