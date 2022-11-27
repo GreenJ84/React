@@ -1,7 +1,7 @@
 import React from 'react'
 import MeetupDetail, { meetupDetailProps } from '../../components/meetups/MeetupDetail';
 
-const DetailPage = (props: meetupDetailProps ) => {
+const DetailPage = (props: meetupDetailProps) => {
 
     return (
         <>

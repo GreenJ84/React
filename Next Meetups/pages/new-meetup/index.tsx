@@ -8,9 +8,6 @@ const NewMeetup = () => {
 
     return (
         <>
-            <Head>
-                
-            </Head>
             <NewMeetupForm onAddMeetup={ onAddMeetup } />
         </>
     )
