@@ -32,26 +32,26 @@ const NewMeetupForm = (props: meetupFormProps) => {
         }
     return (
         <Card>
-            <form onSubmit={submitHandler} className='form'>
-                <div className='input'>
+            <form onSubmit={submitHandler} className={ css.form }>
+                <div className={ css.input }>
                     <label htmlFor='title'>
                         Meetup Title
                     </label>
                     <input type='text' required id='title' ref={titleInputRef} />
                 </div>
-                <div className='input'>
+                <div className={ css.input }>
                     <label htmlFor='image'>
                         Meetup Image
                     </label>
                     <input type='url' required id='image' ref={imageInputRef} />
                 </div>
-                <div className='input'>
+                <div className={ css.input }>
                     <label htmlFor='address'>
                             Address
                     </label>
                     <input type='text' required id='address' ref={addressInputRef} />
                 </div>
-                <div className='input'>
+                <div className={ css.input }>
                     <label htmlFor='description'>
                         Description
                     </label>
@@ -59,7 +59,7 @@ const NewMeetupForm = (props: meetupFormProps) => {
                         >
                     </textarea>
                 </div>
-                <div className='submit'>
+                <div className={ css.submit }>
                     <button>
                         Add Meetup
                     </button>
