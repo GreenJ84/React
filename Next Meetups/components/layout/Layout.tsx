@@ -1,5 +1,6 @@
 import React, { ReactElement } from "react";
 import styled from 'styled-components'
+import NavBar from "./NavBar";
 
 interface layoutProps {
     children: ReactElement | ReactElement[]
@@ -8,17 +9,16 @@ interface layoutProps {
 const Layout = (props: layoutProps) => {
     return (
         <div>
-        {/* NavBar Component */}
-        <Main>{props.children}</Main>
+            <NavBar />
+            <div>{props.children}</div>
         </div>
     );
 }
 
-const Main = styled.main`
+const Main = styled.div`
     margin: 3rem auto;
     width: 90%;
     max-width: 40rem;
 `
 
 export default Layout;
-
