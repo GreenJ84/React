@@ -1,39 +1,10 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
+import { GetStaticProps } from 'next'
+
+import { MongoClient } from 'mongodb'
+
 import MeetupList from '../components/meetups/MeetupList'
 import { meetupDetailProps } from '../components/meetups/MeetupDetail'
-import { GetServerSideProps, GetServerSidePropsContext, GetStaticProps, GetStaticPropsContext, PreviewData } from 'next'
-import { ParsedUrlQuery } from 'querystring'
-
-export const DUMMY_DATA = [
-    {
-        id: 1,
-        image: '',
-        title: 'This is DUMMY 1',
-        address: 'Dummy 1 St',
-        description: 'Dummy 1 is here'
-    },
-    {
-        id: 2,
-        image: '',
-        title: 'This is DUMMY 2',
-        address: 'Dummy 2 St',
-        description: 'Dummy 2 is here'
-    },
-    {
-        id: 3,
-        image: '',
-        title: 'This is DUMMY 3',
-        address: 'Dummy 3 St',
-        description: 'Dummy 3 is here'
-    },
-    {
-        id: 4,
-        image: '',
-        title: 'This is DUMMY 4',
-        address: 'Dummy 4 St',
-        description: 'Dummy 4 is here'
-    },
-]
 
 interface homeProps{
     meetups: meetupDetailProps[]
@@ -47,10 +18,23 @@ const HomePage = (props: homeProps) => {
     )
 }
 
-export const getStaticProps: GetStaticProps = (context) => {
+export const getStaticProps: GetStaticProps = async () => {
+
+    const client = new MongoClient(process.env.DB_CONN_STRING!)
+        const db = client.db()
+
+    const meetupsCollection = db.collection(process.env.COLLECTION_NAME!)
+
+    const results = await meetupsCollection.find().toArray()
+
     return {
         props: {
-            meetups: DUMMY_DATA
+            meetups: results.map(results => ({
+                title: results.title,
+                address: results.address,
+                image: results.image,
+                id: results._id.toString(),
+            }))
         },
         // How many seconds to refresh when server calls ARE coming in
         revalidate: 10
