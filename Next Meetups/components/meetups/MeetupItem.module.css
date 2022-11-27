@@ -3,6 +3,7 @@
     width: 80%;
     box-shadow: 3px 3px 2px 1px rgba(67, 67, 67, 0.699);
     border-radius: 10px;
+    border: 1px solid black;
 }
 
 .image {
