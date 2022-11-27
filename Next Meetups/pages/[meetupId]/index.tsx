@@ -1,10 +1,16 @@
 import React from 'react'
-import { isRegularExpressionLiteral } from 'typescript';
+import MeetupDetail, { meetupDetailProps } from '../../components/meetups/MeetupDetail';
 
-const DetailPage = () => {
+const DetailPage = (props: meetupDetailProps ) => {
 
     return (
-        <div>DetailPage</div>
+        <>
+        <MeetupDetail id={1}
+        image={props.image}
+        title={props.title}
+        address={props.address}
+        description={props.description}/>
+        </>
     )
 }
 
