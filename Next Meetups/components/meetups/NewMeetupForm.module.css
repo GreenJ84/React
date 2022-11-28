@@ -1,6 +1,12 @@
 .form {
-    width: 60%;
+    width: 80%;
     margin: 4rem auto;
+    background-color: aliceblue;
+    padding: 2.5rem;
+    border: 1px solid lightblue;
+    box-shadow: 5px 5px 8px rgb(127, 188, 208);
+    border-radius: 20px;
+
 }
 
 .input {

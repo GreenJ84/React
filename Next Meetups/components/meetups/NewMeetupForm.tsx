@@ -31,7 +31,6 @@ const NewMeetupForm = (props: meetupFormProps) => {
         props.onAddMeetup(meetupData);
         }
     return (
-        <Card>
             <form onSubmit={submitHandler} className={ css.form }>
                 <div className={ css.input }>
                     <label htmlFor='title'>
@@ -65,7 +64,6 @@ const NewMeetupForm = (props: meetupFormProps) => {
                     </button>
                 </div>
             </form>
-        </Card>
     )
 }
 
