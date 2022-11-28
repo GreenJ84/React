@@ -4,7 +4,7 @@ import Card from '../ui/Card';
 const css = require('./MeetupItem.module.css')
 
 export interface meetupItemProps {
-    id: number
+    id: string
     image: string
     title: string
     address: string

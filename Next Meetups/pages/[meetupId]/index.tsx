@@ -1,8 +1,10 @@
+import React from 'react'
 import { GetStaticPaths, GetStaticProps } from 'next';
 import { ParsedUrlQuery } from 'querystring';
-import React from 'react'
-import { DUMMY_DATA } from '..';
+import { MongoClient, ObjectId } from 'mongodb'
+
 import MeetupDetail, { meetupDetailProps } from '../../components/meetups/MeetupDetail';
+
 
 const DetailPage = (props: meetupDetailProps) => {
 
@@ -21,26 +23,47 @@ interface Params extends ParsedUrlQuery {
     meetupId: string
 }
 
-export const getStaticPaths: GetStaticPaths<Params>= async () => {
+export const getStaticPaths: GetStaticPaths<Params> = async () => {
+    
+    const client = new MongoClient(process.env.DB_CONN_STRING!)
+    const db = client.db()
+
+    const meetupsCollection = db.collection(process.env.COLLECTION_NAME!)
+
+    const results = await meetupsCollection.find().toArray()
+
+    client.close()
 
     return {
         fallback: false,
-        paths: [{
-            params: {
-                meetupId: '1'
-            },
-        }]
+        paths: results.map(res => ({ params: { meetupId: res._id.toString() } }
+        ))
     }
 }
 
 export const getStaticProps: GetStaticProps<meetupDetailProps, Params> = async (context) => {
 
     const { meetupId } = context.params!;
-    
-    const x = DUMMY_DATA.filter(data => data.id === parseInt(meetupId))[0] as meetupDetailProps;
 
+    const client = new MongoClient(process.env.DB_CONN_STRING!)
+    const db = client.db()
+
+    const meetupsCollection = db.collection(process.env.COLLECTION_NAME!)
+
+    const results = await meetupsCollection.findOne({ _id: new ObjectId(meetupId) })
+
+    if (!results) {
+        throw Error('No Id found')
+    }
+    
     return {
-        props: x,
+        props:{
+            id: results._id.toString(),
+            image: results.image,
+            title: results.title,
+            address: results.address,
+            description: results.description
+        },
     }
 }
 
