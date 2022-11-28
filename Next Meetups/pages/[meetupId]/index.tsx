@@ -2,6 +2,7 @@ import React from 'react'
 import { GetStaticPaths, GetStaticProps } from 'next';
 import { ParsedUrlQuery } from 'querystring';
 import { MongoClient, ObjectId } from 'mongodb'
+import Head from 'next/head'
 
 import MeetupDetail, { meetupDetailProps } from '../../components/meetups/MeetupDetail';
 
@@ -10,11 +11,18 @@ const DetailPage = (props: meetupDetailProps) => {
 
     return (
         <>
-        <MeetupDetail id={ props.id }
-        image={props.image}
-        title={props.title}
-        address={props.address}
-        description={props.description}/>
+            <Head>
+                <title> {props.title} </title>
+                <meta name='description' content={ props.description } />
+                <meta charSet="utf-8" />
+                <meta name="viewport" content="width=device-width, initial-scale=1" />
+                <meta name="theme-color" content="#000000" />
+            </Head>
+            <MeetupDetail id={ props.id }
+            image={props.image}
+            title={props.title}
+            address={props.address}
+            description={props.description}/>
         </>
     )
 }

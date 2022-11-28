@@ -1,6 +1,7 @@
-import { Head } from 'next/document';
-import Router, { useRouter } from 'next/router';
 import React from 'react'
+import { useRouter } from 'next/router';
+import Head from 'next/head'
+
 import NewMeetupForm from '../../components/meetups/NewMeetupForm';
 
 interface NewData{
@@ -30,6 +31,13 @@ const NewMeetup = () => {
 
     return (
         <>
+            <Head>
+                <title> Create a New Meetup </title>
+                <meta name='description' content='A form for create a new meetup at Next Meetups' />
+                <meta charSet="utf-8" />
+                <meta name="viewport" content="width=device-width, initial-scale=1" />
+                <meta name="theme-color" content="#000000" />
+            </Head>
             <NewMeetupForm onAddMeetup={ onAddMeetup } />
         </>
     )

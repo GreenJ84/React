@@ -5,6 +5,7 @@ import { MongoClient } from 'mongodb'
 
 import MeetupList from '../components/meetups/MeetupList'
 import { meetupDetailProps } from '../components/meetups/MeetupDetail'
+import Head from 'next/head'
 
 interface homeProps{
     meetups: meetupDetailProps[]
@@ -13,6 +14,13 @@ interface homeProps{
 const HomePage = (props: homeProps) => {
     return (
         <>
+            <Head>
+                <title>Next Meetups</title>/
+                <meta name='description' content='Browse a huge list of NExt Meetups' />
+                <meta charSet="utf-8" />
+                <meta name="viewport" content="width=device-width, initial-scale=1" />
+                <meta name="theme-color" content="#000000" />
+            </Head>
             <MeetupList meetups={ props.meetups } />
         </>
     )
